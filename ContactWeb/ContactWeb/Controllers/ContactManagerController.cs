@@ -16,7 +16,7 @@ namespace ContactWeb.Controllers
         {
             var contact = new Contact();
             contact.Name = "Tony";
-            contact.PhoneNumber = "2151352462442";
+            contact.PhoneNumber = "21513524";
             contact.Note = "CEO";
             var success = await ContactManagerProccess.ProccessContact(contact);
 
@@ -26,7 +26,7 @@ namespace ContactWeb.Controllers
             }
             else
             {
-                ViewBag.MessageSave = " save lose";
+                ViewBag.Message = " save lose";
             }
             return View();
         }

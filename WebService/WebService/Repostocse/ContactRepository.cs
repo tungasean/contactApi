@@ -12,7 +12,7 @@ namespace WebService.Repostocse
         public static bool AddContactToDB(Contact contact)
         {
             var connectionString =
-                @"Data Source=DESKTOP-AKLGAKR;Initial Catalog=ContactManager;Integrated Security=True";
+                @"Data Source=TungNguyen;Initial Catalog=ContactManager;Integrated Security=True";
 
             var query = "Insert into ContactList (Name, PhoneNumber, Note) Values ('@Name','@PhoneNum','@Note')";
             query = query.Replace("@Name", contact.Name).Replace("@PhoneNum", contact.PhoneNumber)
