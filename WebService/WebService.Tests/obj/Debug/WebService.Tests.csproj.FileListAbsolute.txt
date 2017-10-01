@@ -1,2 +1,4 @@
 E:\Web\APIService-Client\WebService\WebService.Tests\obj\Debug\WebService.Tests.csprojResolveAssemblyReference.cache
 E:\Web\APIService-Client\WebService\WebService.Tests\obj\Debug\WebService.Tests.csproj.CoreCompileInputs.cache
+E:\Web\contactApi\WebService\WebService.Tests\obj\Debug\WebService.Tests.csprojResolveAssemblyReference.cache
+E:\Web\contactApi\WebService\WebService.Tests\obj\Debug\WebService.Tests.csproj.CoreCompileInputs.cache

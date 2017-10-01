@@ -18,7 +18,7 @@ namespace ContactWeb.Response
             var client = new HttpClient();
             var content = JsonConvert.SerializeObject(contact);
             var httpContent = new StringContent(content,Encoding.UTF8,"application/json");
-            var response = await client.PostAsync("http://localhost:51958/SaveContact", httpContent);
+            var response = await client.PostAsync("http://localhost:55721/SaveContact", httpContent);
             var responseString = await response.Content.ReadAsStringAsync();
             if (responseString == "false")
                 return false;

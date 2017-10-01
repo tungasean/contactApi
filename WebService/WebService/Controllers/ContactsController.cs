@@ -24,16 +24,16 @@ namespace WebService.Controllers
             return  new List<Contact>();
         }
 
-//        [HttpPost]
-//        [Route("SaveContact")]
-//        public bool SaveContact(Contact contact)
-//        {
-//            if (contact == null)
-//            {
-//                return false;
-//            }
-//            return ContactProcessor.ProcessContact(contact);
-//
-//        }
+        [HttpPost]
+        [Route("SaveContact")]
+        public bool SaveContact(Contact contact)
+        {
+            if (contact == null)
+            {
+                return false;
+            }
+            return ContactProcessor.ProcessContact(contact);
+
+        }
     }
 }
