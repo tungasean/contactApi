@@ -22,8 +22,17 @@ EmployeeService.factory('EmpApi',
         EmpApi.EditEmployee = function(empToUpdate) {
             var request = $http({
                 method: 'put',
-                url: urlBase + '/C_NHANVIEN' + empToUpdate.MANV,
+                url: urlBase + '/C_NHANVIEN/' + empToUpdate.MANV,
                 data: empToUpdate
+            });
+            return request;
+        };
+
+        //delete employee
+        EmpApi.DeleteEmployee = function (empToDelete) {
+            var request = $http({
+                method: 'delete',
+                url: urlBase + '/C_NHANVIEN/' + empToDelete.MANV,
             });
             return request;
         };
