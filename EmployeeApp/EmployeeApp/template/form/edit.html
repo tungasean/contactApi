@@ -1,0 +1,49 @@
+﻿<h1 class="text-center text-danger">Edit Employee</h1>
+<br/>
+<div class="row">
+    <div class="col-md-3 col-md-offset-1">
+        <h3 class="text-danger">Select Employee</h3>
+        <hr/>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                {{SelectedItem}}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li ng-repeat="a in emps">
+                    <a ng-click="dropboxitemselected(a)">{{a.MANV}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <form ng-show="isDeleteItemVisible">
+            <div class="form-group">
+                <label for="inputEmail">Ho Ten</label>
+                <input type="text" ng-model="hoten" class="form-control input-lg" placeholder="Ho Ten" />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Gioi TInh</label>
+                <input type="text" ng-model="gioitinh" class="form-control input-lg" placeholder="Gioi Tinh" />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Ngay Sinh</label>
+                <input type="text" ng-model="ngaysinh" class="form-control input-lg" placeholder="Ngay Sinh" />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Dia Chi</label>
+                <input type="text" ng-model="diachi" class="form-control input-lg" placeholder="Dia Chi" />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Dien Thoai</label>
+                <input type="text" ng-model="dienthoai" class="form-control input-lg" placeholder="Dien Thoai" />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Chuc Vu</label>
+                <input type="text" ng-model="chucvu" class="form-control input-lg" placeholder="Chuc Vu" />
+            </div>
+            
+            <button ng-click="UpdateEmp()" class="btn btn-warning form-control input-lg">Update</button>
+        </form>
+    </div>
+</div>
