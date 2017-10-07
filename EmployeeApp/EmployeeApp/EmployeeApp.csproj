@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Controller\form\menu.js" />
     <Content Include="Controller\Scripts\angular-animate.js" />
     <Content Include="Controller\Scripts\angular-animate.min.js" />
     <Content Include="Controller\Scripts\angular-aria.js" />
@@ -858,11 +859,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap-theme.css" />
-    <Content Include="css\bootstrap-theme.min.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap\bootstrap-theme.css" />
+    <Content Include="css\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\bootstrap.css" />
+    <Content Include="css\bootstrap\bootstrap.min.css" />
     <Content Include="Controller\form\app_demo.js" />
+    <Content Include="css\main.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Controller\Scripts\bootstrap.js" />
     <Content Include="Controller\Scripts\bootstrap.min.js" />
@@ -870,10 +872,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="css\bootstrap.min.css.map" />
-    <Content Include="css\bootstrap.css.map" />
-    <Content Include="css\bootstrap-theme.min.css.map" />
-    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap\bootstrap.min.css.map" />
+    <Content Include="css\bootstrap\bootstrap.css.map" />
+    <Content Include="css\bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap\bootstrap-theme.css.map" />
     <None Include="Controller\Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Controller\Scripts\jquery-1.9.1.js" />
     <Content Include="Controller\Scripts\jquery-1.9.1.min.js" />
