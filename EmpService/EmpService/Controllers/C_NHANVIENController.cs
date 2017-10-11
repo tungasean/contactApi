@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using EmpService.Controllers.Utils;
 using EmpService.Models;
 
 namespace EmpService.Controllers
@@ -16,12 +17,15 @@ namespace EmpService.Controllers
     {
         private QUANLYKYTUCEntities db = new QUANLYKYTUCEntities();
 
+        #region Lay All Nhan Vien
         // GET: api/C_NHANVIEN
         public IQueryable<C_NHANVIEN> GetC_NHANVIEN()
         {
             return db.C_NHANVIEN;
         }
+        #endregion
 
+        #region Lay Danh Sach Nhan Vien THeo ID
         // GET: api/C_NHANVIEN/5
         [ResponseType(typeof(C_NHANVIEN))]
         public IHttpActionResult GetC_NHANVIEN(string id)
@@ -34,7 +38,9 @@ namespace EmpService.Controllers
 
             return Ok(c_NHANVIEN);
         }
+        #endregion
 
+        #region Sua Nhan Vien
         // PUT: api/C_NHANVIEN/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutC_NHANVIEN(string id, C_NHANVIEN c_NHANVIEN)
@@ -69,7 +75,9 @@ namespace EmpService.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
+        #endregion
 
+        #region Them Moi Nhan Vien
         // POST: api/C_NHANVIEN
         [ResponseType(typeof(C_NHANVIEN))]
         public IHttpActionResult PostC_NHANVIEN(C_NHANVIEN c_NHANVIEN)
@@ -82,7 +90,7 @@ namespace EmpService.Controllers
             c_NHANVIEN.MANV = new Random().Next().ToString();
 
             db.C_NHANVIEN.Add(c_NHANVIEN);
-
+            //            c_NHANVIEN.HOTEN = Compernon.EnCodeToMd5(c_NHANVIEN.HOTEN);
             try
             {
                 db.SaveChanges();
@@ -101,7 +109,9 @@ namespace EmpService.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = c_NHANVIEN.MANV }, c_NHANVIEN);
         }
+        #endregion
 
+        #region Xoa Nhan Vien
         // DELETE: api/C_NHANVIEN/5
         [ResponseType(typeof(C_NHANVIEN))]
         public IHttpActionResult DeleteC_NHANVIEN(string id)
@@ -117,6 +127,8 @@ namespace EmpService.Controllers
 
             return Ok(c_NHANVIEN);
         }
+        #endregion
+
 
         protected override void Dispose(bool disposing)
         {
