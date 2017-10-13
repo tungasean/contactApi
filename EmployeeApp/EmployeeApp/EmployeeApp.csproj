@@ -864,6 +864,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controller\validate\rules.js" />
+    <Content Include="Controller\vendor\datetime.js" />
+    <Content Include="Controller\vendor\string.js" />
     <Content Include="Controller\validate\validation.js" />
     <Content Include="css\bootstrap\bootstrap-theme.css" />
     <Content Include="css\bootstrap\bootstrap-theme.min.css" />
@@ -896,6 +898,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

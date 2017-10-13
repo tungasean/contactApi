@@ -12,7 +12,6 @@ $Myapp.controller("AddEmployeeController", ["$scope","$document",
 
             };
             if ($validation.hasInvalid(element)) {
-                alert('not support');
                 return;
             }
             EmpApi.AddEmployee(empToAdd)
