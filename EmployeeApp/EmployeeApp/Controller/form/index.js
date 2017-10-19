@@ -25,5 +25,5 @@
                 redirectTo: '/ListEmployee'
             });
     }
-]);
+ ]);
 })(window.angular);

@@ -68,6 +68,8 @@
   <ItemGroup>
     <Content Include="Controller\form\delete.employee.js" />
     <Content Include="Controller\form\edit.employee.js" />
+    <Content Include="Controller\language\lang_vi.js" />
+    <Content Include="Controller\vendor\joiner.vender.js" />
     <None Include="packages.config" />
     <Content Include="Controller\form\add.employee.js" />
     <Content Include="Controller\form\list.employee.js" />

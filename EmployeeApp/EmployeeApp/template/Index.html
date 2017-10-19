@@ -4,22 +4,8 @@
     <meta charset="utf-8" />
     <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="../css/main.css" rel="stylesheet" />
-    <script src="../Controller/Scripts/jquery-1.9.1.js"></script>
-    <script src="../Controller/Scripts/bootstrap.js"></script>
-    <script src="../Controller/Scripts/angular.js"></script>
-    <script src="../Controller/Scripts/angular-route.js"></script>
-    <script src="../Controller/Scripts/angular-scenario.js"></script>
-    <script src="../Controller/Service.js"></script>
-    <script src="../Controller/form/index.js"></script>
-    <script src="../Controller/form/menu.js"></script>
-    <script src="../Controller/validate/rules.js"></script>
-    <script src="../Controller/validate/validation.js"></script>
-    <script src="../Controller/vendor/string.js"></script>
-    <!--initController-->
-    <script src="../Controller/form/edit.employee.js"></script>
-    <script src="../Controller/form/add.employee.js"></script>
-    <script src="../Controller/form/delete.employee.js"></script>
-    <script src="../Controller/form/list.employee.js"></script>
+
+    <script src="../Controller/vendor/joiner.vender.js"></script>
 
 </head>
 <body ng-app="myapp">
@@ -34,7 +20,7 @@
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nhân Viên <span class="caret"></span></a>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Nhân Viên <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li class="dropdown-header">Chọn Mục Nhân Viên</li>
                             <li><a href="#ListEmployee">Danh Sách Nhân Viên</a></li>
@@ -75,7 +61,7 @@
                 </button>
                 <div class="container">
                     <div class="row">
-                        <div ng-view>
+                        <div ng-view >
 
                         </div>
                     </div>
