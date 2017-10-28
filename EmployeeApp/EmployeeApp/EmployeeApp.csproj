@@ -68,6 +68,9 @@
   <ItemGroup>
     <Content Include="Controller\form\delete.employee.js" />
     <Content Include="Controller\form\edit.employee.js" />
+    <Content Include="Controller\form\login.js" />
+    <Content Include="Controller\image\1.jpg" />
+    <Content Include="Controller\image\2.jpg" />
     <Content Include="Controller\language\lang_vi.js" />
     <Content Include="Controller\vendor\joiner.vender.js" />
     <None Include="packages.config" />
@@ -874,6 +877,7 @@
     <Content Include="css\bootstrap\bootstrap.css" />
     <Content Include="css\bootstrap\bootstrap.min.css" />
     <Content Include="Controller\form\index.js" />
+    <Content Include="css\jquery-ui.css" />
     <Content Include="css\main.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Controller\Scripts\bootstrap.js" />
@@ -889,6 +893,7 @@
     <None Include="Controller\Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Controller\Scripts\jquery-1.9.1.js" />
     <Content Include="Controller\Scripts\jquery-1.9.1.min.js" />
+    <Content Include="template\form\login.html" />
     <Content Include="template\Index.html" />
     <Content Include="Controller\Service.js" />
     <Content Include="template\form\add.employee.html" />

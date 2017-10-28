@@ -321,3 +321,29 @@ html { height: 100%;}
     border-color: #FF0000 !important;
     box-shadow: #f00 0px 0px 5px !important;
 }
+
+.pageding-top {
+    margin-top: 20%;
+}
+
+.margin-line {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.my-text-coppyright {
+    text-align: center;
+    bottom: 14px;
+    right: 10px;
+    position: absolute;
+    width: auto;
+    -webkit-font-smoothing: antialiased;
+    text-align: right;
+    font-size: 13px;
+    color: #333333;
+}
+
+.login-bottom {
+    padding-left: 40%;
+    padding-top: 180%;
+}

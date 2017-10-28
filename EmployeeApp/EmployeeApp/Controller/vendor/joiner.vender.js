@@ -15,7 +15,7 @@
     '<script src="../Controller/form/edit.employee.js"></script>',
     '<script src="../Controller/form/add.employee.js"></script>',
     '<script src="../Controller/form/delete.employee.js"></script>',
-    '<script src="../Controller/form/list.employee.js"></script>'
-
+    '<script src="../Controller/form/list.employee.js"></script>',
+    '<script src="../Controller/form/login.js"></script>'
 ];
 document.write(fulltext.join(''));

@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" />
+
     <link href="../css/main.css" rel="stylesheet" />
-
+    <link href="../css/jquery-ui.css" rel="stylesheet" />
     <script src="../Controller/vendor/joiner.vender.js"></script>
-
+    
 </head>
 <body ng-app="myapp">
         <div id="wrapper">
@@ -49,11 +50,15 @@
                             <li><a href="#">One more separated link</a></li>
                         </ul>
                     </li>
+                    <div class="login-bottom">
+                        <a href="#Login" ng-if="!isLogin" ng-click="Login()">Login</a>
+                        <a href="#Login" ng-if="isLogin" ng-click="Logout()">Logout</a>
+                    </div>
                 </ul>
             </nav>
             <!-- /#sidebar-wrapper -->
             <!-- Page Content -->
-            <div id="page-content-wrapper">
+            <div id="page-content-wrapper" >
                 <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
                     <span class="hamb-top"></span>
                     <span class="hamb-middle"></span>

@@ -5,25 +5,35 @@
 
  $Myapp.config(['$routeProvider',
     function ($routeProvider) {
-        $routeProvider.when('/AddEmployee',
+        $routeProvider
+            .when('/Login',
+                {
+                    templateUrl: 'form/login.html',
+                    controller: 'LoginController'
+                })
+            .when('/AddEmployee',
             {
                 templateUrl: 'form/add.employee.html',
                 controller: 'AddEmployeeController'
-            }).when('/EditEmployee',
+            })
+            .when('/EditEmployee',
             {
                 templateUrl: 'form/edit.employee.html',
                 controller: 'EditEmployeeController'
-            }).when('/DeleteEmployee',
+            })
+            .when('/DeleteEmployee',
             {
                 templateUrl: 'form/delete.employee.html',
                 controller: 'DeleteEmployeeController'
-            }).when('/ListEmployee',
+            })
+            .when('/ListEmployee',
             {
                 templateUrl: 'form/list.employee.html',
                 controller: 'ListEmployeeController'
-            }).otherwise({
+            })
+            .otherwise({
                 redirectTo: '/ListEmployee'
             });
     }
- ]);
+    ]);
 })(window.angular);
