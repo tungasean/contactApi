@@ -1,5 +1,5 @@
 ﻿//myapp.controller("AddController",
-$Myapp.controller("AddEmployeeController", ["$scope","$document",
+$Myapp.controller("AddEmployeeController", ["$scope", "$document","EmpApi",
     function ($scope, element, EmpApi) {
         $scope.addEmp = function () {
             var empToAdd = {
