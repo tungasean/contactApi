@@ -13,7 +13,7 @@ using EmpService.Models;
 
 namespace EmpService.Controllers
 {
-    public class C_NHANVIENController : ApiController
+    public class NhanvienController : ApiController
     {
         private QUANLYKYTUCEntities db = new QUANLYKYTUCEntities();
 

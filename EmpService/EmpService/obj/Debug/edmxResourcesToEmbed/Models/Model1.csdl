@@ -14,5 +14,49 @@
   </EntityType>
   <EntityContainer Name="QUANLYKYTUCEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="C_NHANVIEN" EntityType="Self.C_NHANVIEN" />
+    <EntitySet Name="ACCOUNTs" EntityType="QUANLYKYTUCModel.ACCOUNT" />
+    <EntitySet Name="ROLEs" EntityType="QUANLYKYTUCModel.ROLE" />
+    <EntitySet Name="ROLEASSINGGROUPs" EntityType="QUANLYKYTUCModel.ROLEASSINGGROUP" />
+    <EntitySet Name="ROLEGROUPs" EntityType="QUANLYKYTUCModel.ROLEGROUP" />
+    <EntitySet Name="ROLEGROUPACCOUNTs" EntityType="QUANLYKYTUCModel.ROLEGROUPACCOUNT" />
   </EntityContainer>
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="ACCOUNTID" />
+    </Key>
+    <Property Name="ACCOUNTID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNTNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASS" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MANV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="ROLEID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROLENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ROLEASSINGGROUP">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+      <PropertyRef Name="ROLEGROUPID" />
+    </Key>
+    <Property Name="ROLEID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROLEGROUPID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ROLEGROUP">
+    <Key>
+      <PropertyRef Name="ROLEGROUPID" />
+    </Key>
+    <Property Name="ROLEGROUPID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROLEGROUPNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ROLEGROUPACCOUNT">
+    <Key>
+      <PropertyRef Name="ROLEGROUPID" />
+      <PropertyRef Name="ACCOUNTID" />
+    </Key>
+    <Property Name="ROLEGROUPID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNTID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

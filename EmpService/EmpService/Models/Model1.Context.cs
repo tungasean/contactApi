@@ -26,5 +26,10 @@ namespace EmpService.Models
         }
     
         public virtual DbSet<C_NHANVIEN> C_NHANVIEN { get; set; }
+        public virtual DbSet<ACCOUNT> ACCOUNTs { get; set; }
+        public virtual DbSet<ROLE> ROLEs { get; set; }
+        public virtual DbSet<ROLEASSINGGROUP> ROLEASSINGGROUPs { get; set; }
+        public virtual DbSet<ROLEGROUP> ROLEGROUPs { get; set; }
+        public virtual DbSet<ROLEGROUPACCOUNT> ROLEGROUPACCOUNTs { get; set; }
     }
 }

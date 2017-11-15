@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QUANLYKYTUCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QUANLYKYTUCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="_NHANVIEN">
           <Key>
             <PropertyRef Name="MANV" />
@@ -17,11 +17,54 @@
           <Property Name="DIENTHOAI" Type="char" MaxLength="20" />
           <Property Name="CHUCVU" Type="nvarchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="ACCOUNTID" />
+          </Key>
+          <Property Name="ACCOUNTID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ACCOUNTNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASS" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MANV" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ROLEID" />
+          </Key>
+          <Property Name="ROLEID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ROLENAME" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ROLEASSINGGROUP">
+          <Key>
+            <PropertyRef Name="ROLEID" />
+            <PropertyRef Name="ROLEGROUPID" />
+          </Key>
+          <Property Name="ROLEID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ROLEGROUPID" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLEGROUP">
+          <Key>
+            <PropertyRef Name="ROLEGROUPID" />
+          </Key>
+          <Property Name="ROLEGROUPID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ROLEGROUPNAME" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ROLEGROUPACCOUNT">
+          <Key>
+            <PropertyRef Name="ROLEGROUPID" />
+            <PropertyRef Name="ACCOUNTID" />
+          </Key>
+          <Property Name="ROLEGROUPID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ACCOUNTID" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="QUANLYKYTUCModelStoreContainer">
           <EntitySet Name="_NHANVIEN" EntityType="Self._NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLEASSINGGROUP" EntityType="Self.ROLEASSINGGROUP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLEGROUP" EntityType="Self.ROLEGROUP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLEGROUPACCOUNT" EntityType="Self.ROLEGROUPACCOUNT" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QUANLYKYTUCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -39,7 +82,51 @@
         </EntityType>
         <EntityContainer Name="QUANLYKYTUCEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C_NHANVIEN" EntityType="Self.C_NHANVIEN" />
+          <EntitySet Name="ACCOUNTs" EntityType="QUANLYKYTUCModel.ACCOUNT" />
+          <EntitySet Name="ROLEs" EntityType="QUANLYKYTUCModel.ROLE" />
+          <EntitySet Name="ROLEASSINGGROUPs" EntityType="QUANLYKYTUCModel.ROLEASSINGGROUP" />
+          <EntitySet Name="ROLEGROUPs" EntityType="QUANLYKYTUCModel.ROLEGROUP" />
+          <EntitySet Name="ROLEGROUPACCOUNTs" EntityType="QUANLYKYTUCModel.ROLEGROUPACCOUNT" />
         </EntityContainer>
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="ACCOUNTID" />
+          </Key>
+          <Property Name="ACCOUNTID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ACCOUNTNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASS" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MANV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ROLEID" />
+          </Key>
+          <Property Name="ROLEID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ROLEASSINGGROUP">
+          <Key>
+            <PropertyRef Name="ROLEID" />
+            <PropertyRef Name="ROLEGROUPID" />
+          </Key>
+          <Property Name="ROLEID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLEGROUPID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ROLEGROUP">
+          <Key>
+            <PropertyRef Name="ROLEGROUPID" />
+          </Key>
+          <Property Name="ROLEGROUPID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLEGROUPNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ROLEGROUPACCOUNT">
+          <Key>
+            <PropertyRef Name="ROLEGROUPID" />
+            <PropertyRef Name="ACCOUNTID" />
+          </Key>
+          <Property Name="ROLEGROUPID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNTID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -56,6 +143,48 @@
                 <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
                 <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
                 <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACCOUNTs">
+            <EntityTypeMapping TypeName="QUANLYKYTUCModel.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+                <ScalarProperty Name="ACCOUNTNAME" ColumnName="ACCOUNTNAME" />
+                <ScalarProperty Name="ACCOUNTID" ColumnName="ACCOUNTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEs">
+            <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLE">
+              <MappingFragment StoreEntitySet="ROLE">
+                <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEASSINGGROUPs">
+            <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLEASSINGGROUP">
+              <MappingFragment StoreEntitySet="ROLEASSINGGROUP">
+                <ScalarProperty Name="ROLEGROUPID" ColumnName="ROLEGROUPID" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEGROUPs">
+            <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLEGROUP">
+              <MappingFragment StoreEntitySet="ROLEGROUP">
+                <ScalarProperty Name="ROLEGROUPNAME" ColumnName="ROLEGROUPNAME" />
+                <ScalarProperty Name="ROLEGROUPID" ColumnName="ROLEGROUPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEGROUPACCOUNTs">
+            <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLEGROUPACCOUNT">
+              <MappingFragment StoreEntitySet="ROLEGROUPACCOUNT">
+                <ScalarProperty Name="ACCOUNTID" ColumnName="ACCOUNTID" />
+                <ScalarProperty Name="ROLEGROUPID" ColumnName="ROLEGROUPID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

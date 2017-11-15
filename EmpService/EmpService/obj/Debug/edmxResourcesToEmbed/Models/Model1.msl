@@ -14,5 +14,47 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ACCOUNTs">
+      <EntityTypeMapping TypeName="QUANLYKYTUCModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+          <ScalarProperty Name="ACCOUNTNAME" ColumnName="ACCOUNTNAME" />
+          <ScalarProperty Name="ACCOUNTID" ColumnName="ACCOUNTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLEs">
+      <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLE">
+        <MappingFragment StoreEntitySet="ROLE">
+          <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLEASSINGGROUPs">
+      <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLEASSINGGROUP">
+        <MappingFragment StoreEntitySet="ROLEASSINGGROUP">
+          <ScalarProperty Name="ROLEGROUPID" ColumnName="ROLEGROUPID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLEGROUPs">
+      <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLEGROUP">
+        <MappingFragment StoreEntitySet="ROLEGROUP">
+          <ScalarProperty Name="ROLEGROUPNAME" ColumnName="ROLEGROUPNAME" />
+          <ScalarProperty Name="ROLEGROUPID" ColumnName="ROLEGROUPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLEGROUPACCOUNTs">
+      <EntityTypeMapping TypeName="QUANLYKYTUCModel.ROLEGROUPACCOUNT">
+        <MappingFragment StoreEntitySet="ROLEGROUPACCOUNT">
+          <ScalarProperty Name="ACCOUNTID" ColumnName="ACCOUNTID" />
+          <ScalarProperty Name="ROLEGROUPID" ColumnName="ROLEGROUPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
