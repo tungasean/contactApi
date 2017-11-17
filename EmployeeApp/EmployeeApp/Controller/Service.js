@@ -6,15 +6,15 @@ EmployeeService.factory('EmpApi',
     function($http) {
         var urlBase = "http://localhost:64122/api";
         var EmpApi = {};
-
+// Nhan Vien
         //get list all employee
         EmpApi.getEmployees = function() {
-            return $http.get(urlBase + '/C_NHANVIEN');
+            return $http.get(urlBase + '/NHANVIEN');
         };
         //add new employee
         EmpApi.AddEmployee = function(emp) {
 
-            return $http.post(urlBase + '/C_NHANVIEN', emp);
+            return $http.post(urlBase + '/NHANVIEN', emp);
 
         }
 
@@ -22,7 +22,7 @@ EmployeeService.factory('EmpApi',
         EmpApi.EditEmployee = function(empToUpdate) {
             var request = $http({
                 method: 'put',
-                url: urlBase + '/C_NHANVIEN/' + empToUpdate.MANV,
+                url: urlBase + '/NHANVIEN/' + empToUpdate.MANV,
                 data: empToUpdate
             });
             return request;
@@ -32,11 +32,18 @@ EmployeeService.factory('EmpApi',
         EmpApi.DeleteEmployee = function (empToDelete) {
             var request = $http({
                 method: 'delete',
-                url: urlBase + '/C_NHANVIEN/' + empToDelete.MANV,
+                url: urlBase + '/NHANVIEN/' + empToDelete.MANV,
             });
             return request;
         };
 
-
+//Account
+        EmpApi.Login = function(user) {
+            var request = $http({
+                method: 'put',
+                url: urlBase + '/ACCOUNTS?USERNAME=' + user.USERNAME + '&PASS=' + user.PASS
+            });
+            return request;
+        };
         return EmpApi;
     });

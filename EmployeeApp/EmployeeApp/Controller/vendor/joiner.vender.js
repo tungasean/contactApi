@@ -11,6 +11,7 @@
     '<script src="../Controller/validate/validation.js"></script>',
     '<script src="../Controller/vendor/string.js"></script>',
     '<script src="../Controller/language/lang_vi.js"></script>',
+    '<script src="../Controller/vendor/datetime.js"></script>',
     //initController
     '<script src="../Controller/form/edit.employee.js"></script>',
     '<script src="../Controller/form/add.employee.js"></script>',

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,7 +22,19 @@ namespace EmpService.Controllers
         // GET: api/C_NHANVIEN
         public IQueryable<C_NHANVIEN> GetC_NHANVIEN()
         {
+            SqlConnection con = new SqlConnection(@"Data Source =TungNguyen;Initial Catalog=QUANLYKYTUC;
+                Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
+            con.Open();
+            string sql = "select Count(*) from _NHANVIEN";
+            SqlCommand com = new SqlCommand(sql, con);
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            string output = com.ExecuteScalar().ToString();
+            adapter.Fill(table);
+
             return db.C_NHANVIEN;
+
         }
         #endregion
 
@@ -45,20 +58,21 @@ namespace EmpService.Controllers
         [ResponseType(typeof(void))]
         public IHttpActionResult PutC_NHANVIEN(string id, C_NHANVIEN c_NHANVIEN)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != c_NHANVIEN.MANV)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(c_NHANVIEN).State = EntityState.Modified;
-
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                if (id != c_NHANVIEN.MANV)
+                {
+                    return BadRequest();
+                }
+
+                db.Entry(c_NHANVIEN).State = EntityState.Modified;
+
+
                 db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)

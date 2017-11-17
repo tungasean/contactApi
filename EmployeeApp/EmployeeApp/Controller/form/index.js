@@ -1,7 +1,9 @@
 ﻿/// <reference path="E:\Web\Ban hang\EmployeeApp\EmployeeApp\Scripts\angular.js" />
 
 (function (angular) {
-    window.$Myapp = angular.module("myapp", ['ngRoute', 'EmployeeService','validation']);
+    window.$Myapp = angular.module("myapp", ['ngRoute', 'EmployeeService', 'validation']);
+
+    window.$IsLogin = false;
 
  $Myapp.config(['$routeProvider',
     function ($routeProvider) {

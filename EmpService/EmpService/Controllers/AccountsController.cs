@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using EmpService.Models;
@@ -37,22 +39,56 @@ namespace EmpService.Controllers
 
         // PUT: api/Accounts/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutACCOUNT(string id, ACCOUNT aCCOUNT)
+        public IHttpActionResult PutACCOUNT(string username, string pass)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != aCCOUNT.ACCOUNTID)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(aCCOUNT).State = EntityState.Modified;
-
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var session = HttpContext.Current.Session;
+
+                SqlConnection con = new SqlConnection(@"Data Source =TungNguyen;Initial Catalog=QUANLYKYTUC;
+                Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
+                con.Open();
+                string sql = "select COUNT(*) from ACCOUNT where ACCOUNTNAME = '" + username + "' AND PASS = '" + pass + "'";
+                SqlCommand com = new SqlCommand(sql, con);
+                string output = com.ExecuteScalar().ToString();
+
+                if (output == "1")
+                {
+                    //session["user"] = aCCOUNT.ACCOUNTNAME;
+                    return Ok(username);
+                }
+                
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+
+            return Ok(username);
+        }
+
+        // PUT: api/Accounts/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutACCOUNT(string id, ACCOUNT aCCOUNT)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                if (id != aCCOUNT.ACCOUNTID)
+                {
+                    return BadRequest();
+                }
+
+                db.Entry(aCCOUNT).State = EntityState.Modified;
+
                 db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
@@ -129,5 +165,7 @@ namespace EmpService.Controllers
         {
             return db.ACCOUNTs.Count(e => e.ACCOUNTID == id) > 0;
         }
+
+
     }
 }

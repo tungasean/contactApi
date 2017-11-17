@@ -7,7 +7,7 @@
     <link href="../css/main.css" rel="stylesheet" />
     <link href="../css/jquery-ui.css" rel="stylesheet" />
     <script src="../Controller/vendor/joiner.vender.js"></script>
-    
+
 </head>
 <body ng-app="myapp">
         <div id="wrapper">
@@ -51,8 +51,8 @@
                         </ul>
                     </li>
                     <div class="login-bottom">
-                        <a href="#Login" ng-if="!isLogin" ng-click="Login()">Login</a>
-                        <a href="#Login" ng-if="isLogin" ng-click="Logout()">Logout</a>
+                        <a href="#Login" ng-if="!isLogin">Login</a>
+                        <a href="#Logout" ng-if="isLogin">Logout</a>
                     </div>
                 </ul>
             </nav>
